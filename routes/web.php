@@ -16,3 +16,6 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::view('/navegacion/navegacion', '/navegacion/navegacion');
+Route::view('/navegacion/navbarcliente', '/navegacion/navbarcliente');
