@@ -40,9 +40,9 @@ return [
             'driver' => 'session',
             'provider' => 'users',
         ],
-        'web' => [
-        'driver' => 'session',
-        'provider' => 'logear_clientes',
+        'clientes' => [
+            'driver' => 'session',
+            'provider' => 'logear_clientes',
         ],
     ],
 

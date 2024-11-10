@@ -42,17 +42,17 @@ class ClientesLoginController extends Controller
             'email' => 'required|email',
             'password' => 'required',
         ]);
-
+    
         $credentials = $request->only('email', 'password');
-
-        if (Auth::attempt($credentials)) {
+    
+        if (Auth::guard('clientes')->attempt($credentials)) {
             return redirect()->intended('/pagina/index');
         }
-
+    
         return back()->withErrors([
             'email' => 'Las credenciales no coinciden con nuestros registros.',
         ]);
-    }
+    }    
 
     public function logout(Request $request){
         Auth::logout();
