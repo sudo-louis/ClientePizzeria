@@ -7,7 +7,6 @@
                 <div class="shrink-0 max-w-md lg:max-w-lg mx-auto">
                     <img class="w-full dark:hidden" src="{{ $product->image }}" alt="" />
                 </div>
-
                 <div class="mt-6 sm:mt-8 lg:mt-0">
                     <h1 class="text-xl font-semibold text-gray-900 sm:text-2xl dark:text-white">
                         {{ $product->title }}
@@ -19,7 +18,6 @@
                         <p class="text-2xl font-extrabold text-gray-900 sm:text-3xl dark:text-white">
                             {{ $product->price }}
                         </p>
-
                         <div class="flex items-center gap-2 mt-2 sm:mt-0">
                             <div class="flex items-center gap-1">
                                 <svg class="w-4 h-4 text-yellow-300" aria-hidden="true"
@@ -75,7 +73,6 @@
                             </svg>
                             Add to favorites
                         </a>
-
                         <a href="#" title=""
                             class="text-white mt-4 sm:mt-0 bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 dark:bg-primary-600 dark:hover:bg-primary-700 focus:outline-none dark:focus:ring-primary-800 flex items-center justify-center"
                             role="button">
@@ -85,11 +82,9 @@
                                     stroke-width="2"
                                     d="M4 4h1.5L8 16m0 0h8m-8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm.75-3H7.5M11 7H6.312M17 4v6m-3-3h6" />
                             </svg>
-
                             Add to cart
                         </a>
                     </div>
-
                 </div>
             </div>
         </div>

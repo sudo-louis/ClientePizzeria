@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ClientesLoginController;
 use App\Http\Controllers\FakeStoreApiController;
+use App\Http\Controllers\InventarioController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -20,9 +21,10 @@ Route::get('/', function () {
 });
 
 Route::middleware('clientes.auth')->group(function () {
-    Route::view('/pagina/index', '/pagina/index');
+    Route::get('/pagina/index', [InventarioController::class, 'index']);
     Route::get('/catalogo/listado', [FakeStoreApiController::class, 'productos']);
     Route::get('/catalogo/detalle/{id}', [FakeStoreApiController::class, 'productobyid']);
+    Route::get('/pagina/index', [InventarioController::class, 'index']);
 });
 
 //Login y Register
