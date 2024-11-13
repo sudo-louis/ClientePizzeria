@@ -7,26 +7,13 @@ use Illuminate\Http\Request;
 
 class InventarioController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
+
     public function index()
     {
         $inventario = Inventario::all();
         return view('pagina.index', compact('inventario'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     */
     public function store(Request $request)
     {
         // $datosInventario = request()->except('_token');
@@ -42,35 +29,23 @@ class InventarioController extends Controller
         // return redirect()->route('pagina.ingresar')->with('success', 'Cliente registrado con éxito.');
     }
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(string $id)
-    {
-        //
+    public function productosCarrito(){
+        return view('/pagina/carrito')->with('productosCarrito',\Cart::getContent());
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(string $id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, string $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(string $id)
-    {
-        //
+    public function agregarCarrito(Request $request){
+        //dd($request->all());
+        \Cart::add(array(
+            'id' => $request->id,
+            'name' => $request->name,
+            'price' => $request->price,
+            'quantity' => $request->quantity,
+            'attributes' => array(
+                'description' => $request->description,
+                'image' => $request->image,
+                //'subtotal' => $request->price * $request->quantity,
+            )
+        ));
+        return redirect('/prueba/carrito');
     }
 }

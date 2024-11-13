@@ -25,6 +25,8 @@ Route::middleware('clientes.auth')->group(function () {
     Route::get('/catalogo/listado', [FakeStoreApiController::class, 'productos']);
     Route::get('/catalogo/detalle/{id}', [FakeStoreApiController::class, 'productobyid']);
     Route::get('/pagina/index', [InventarioController::class, 'index']);
+    Route::post('/pagina/agregar', [InventarioController::class, 'agregarCarrito']);
+    Route::get('/prueba/carrito', [InventarioController::class, 'productosCarrito']);
 });
 
 //Login y Register
